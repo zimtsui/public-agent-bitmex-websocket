@@ -12,6 +12,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const axios_1 = __importDefault(require("axios"));
 const autonomous_1 = __importDefault(require("autonomous"));
 const autobind_decorator_1 = require("autobind-decorator");
+const assert_1 = __importDefault(require("assert"));
 const interfaces_1 = require("./interfaces");
 var RawDataAction;
 (function (RawDataAction) {
@@ -30,11 +31,13 @@ class RawOrderbookHandler extends autonomous_1.default {
         const res = await axios_1.default.get(this.config.INSTRUMENT_LIST_URL);
         const list = res.data;
         this.xbtusdIndex = list.findIndex(instrument => instrument.symbol === 'XBTUSD');
+        console.log(this.xbtusdIndex);
+        assert_1.default(this.xbtusdIndex !== -1);
     }
     async _stop() {
     }
     calcPriceCent(id) {
-        const price = ((100000000 * this.xbtusdIndex) - id) * this.config.XBTUSD_TICKSIZE;
+        const price = (100000000 * this.xbtusdIndex - id) * this.config.XBTUSD_TICKSIZE;
         return Math.round(price * 100);
     }
     handle(raw, rawDataAction) {
@@ -61,9 +64,10 @@ class RawOrderbookHandler extends autonomous_1.default {
         };
     }
     formatRawOrder(rawOrder) {
+        const priceCent = this.calcPriceCent(rawOrder.id);
         return {
             price: this.calcPriceCent(rawOrder.id),
-            amount: rawOrder.size || 0,
+            amount: rawOrder.size ? rawOrder.size * 100 / priceCent : 0,
             action: rawOrder.side === 'Buy' ? interfaces_1.Action.BID : interfaces_1.Action.ASK,
         };
     }

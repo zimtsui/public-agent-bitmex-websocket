@@ -45,7 +45,7 @@ class PublicAgentBitmexWebsocket extends autonomous_1.default {
         await this.rawOrderbookHandler.stop();
     }
     async connectPublicCenter() {
-        this.publicCenter = new ws_1.default(config.PUBLIC_CENTER_URL);
+        this.publicCenter = new ws_1.default(`${config.PUBLIC_CENTER_BASE_URL}/bitmex/XBTUSD/USD`);
         this.publicCenter.on('error', err => {
             console.error(err);
         });
@@ -58,7 +58,7 @@ class PublicAgentBitmexWebsocket extends autonomous_1.default {
     async connectBitmex() {
         this.bitmex = new ws_1.default(config.BITMEX_WEBSOCKET_URL);
         this.bitmex.on('message', (message) => {
-            this.bitmex.emit('rawData', JSON.parse(message));
+            this.bitmex.emit('data', JSON.parse(message));
         });
         this.bitmex.on('error', err => {
             console.error(err);

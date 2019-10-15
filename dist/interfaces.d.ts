@@ -1,7 +1,7 @@
 export * from 'interfaces';
 interface Config {
     BITMEX_WEBSOCKET_URL: string;
-    PUBLIC_CENTER_URL: string;
+    PUBLIC_CENTER_BASE_URL: string;
     INSTRUMENT_LIST_URL: string;
     XBTUSD_TICKSIZE: number;
 }

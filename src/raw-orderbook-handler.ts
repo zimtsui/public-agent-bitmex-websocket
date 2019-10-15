@@ -1,6 +1,7 @@
 import axios from 'axios';
 import Autonomous from 'autonomous';
 import { boundMethod } from 'autobind-decorator';
+import assert from 'assert';
 import {
     Config,
     RawOrderbookData,
@@ -30,6 +31,8 @@ class RawOrderbookHandler extends Autonomous {
         const list = <any[]>res.data;
         this.xbtusdIndex = list.findIndex(instrument =>
             instrument.symbol === 'XBTUSD');
+        console.log(this.xbtusdIndex);
+        assert(this.xbtusdIndex !== -1);
     }
 
     protected async _stop(): Promise<void> {
@@ -37,7 +40,7 @@ class RawOrderbookHandler extends Autonomous {
     }
 
     private calcPriceCent(id: number) {
-        const price = ((100000000 * this.xbtusdIndex) - id) * this.config.XBTUSD_TICKSIZE;
+        const price = (100000000 * this.xbtusdIndex - id) * this.config.XBTUSD_TICKSIZE;
         return Math.round(price * 100);
     }
 
@@ -72,9 +75,10 @@ class RawOrderbookHandler extends Autonomous {
 
     @boundMethod
     private formatRawOrder(rawOrder: RawOrderbookDataItem): Order {
+        const priceCent = this.calcPriceCent(rawOrder.id);
         return {
             price: this.calcPriceCent(rawOrder.id),
-            amount: rawOrder.size || 0,
+            amount: rawOrder.size ? rawOrder.size * 100 / priceCent : 0,
             action: rawOrder.side === 'Buy' ? Action.BID : Action.ASK,
         }
     }
