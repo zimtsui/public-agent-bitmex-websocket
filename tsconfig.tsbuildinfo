@@ -350,7 +350,7 @@
         "signature": "608f2736fe1cc700255c8116afc63d28fdc483254392ee3fde7bdafb26b12f71"
       },
       "./src/index.ts": {
-        "version": "128a611e30062da2ef7fd1a558109ab30c1301d89c8d8d3b6e03433b8527b3a8",
+        "version": "c8be232f06c0cf6344084370ea96c076260280d83b6d838f8666a562d5b2a670",
         "signature": "7795393995a774d731127b76814080bc3154b309adcae8a4c6ae7e9b56ffe54b"
       },
       "./node_modules/@types/bluebird/index.d.ts": {
@@ -1341,6 +1341,9 @@
       "./node_modules/typescript/lib/lib.es2019.symbol.d.ts",
       "./node_modules/typescript/lib/lib.esnext.intl.d.ts",
       "./node_modules/typescript/lib/lib.esnext.bigint.d.ts",
+      "./node_modules/interfaces/dist/index.d.ts",
+      "./src/interfaces.ts",
+      "./src/format-raw-trades.ts",
       "./node_modules/@types/node/globals.d.ts",
       "./node_modules/@types/node/assert.d.ts",
       "./node_modules/@types/node/async_hooks.d.ts",
@@ -1391,12 +1394,9 @@
       "./node_modules/autonomous/dist/index.d.ts",
       "./node_modules/@types/fs-extra/index.d.ts",
       "./node_modules/axios/index.d.ts",
-      "./node_modules/interfaces/dist/index.d.ts",
-      "./src/interfaces.ts",
-      "./src/index.ts",
       "./src/raw-orderbook-handler.ts",
-      "./src/format-raw-trades.ts",
-      "./node_modules/@types/bluebird/index.d.ts"
+      "./node_modules/@types/bluebird/index.d.ts",
+      "./src/index.ts"
     ]
   },
   "version": "3.6.4"

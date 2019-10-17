@@ -34,13 +34,17 @@ class PublicAgentBitmexWebsocket extends Autonomous {
     }
 
     protected async _stop(): Promise<void> {
-        if (this.publicCenter && this.publicCenter.readyState !== 3) {
-            this.publicCenter.close(ACTIVE_CLOSE);
-            await once(this.publicCenter, 'close');
+        if (this.publicCenter) {
+            if (this.publicCenter.readyState < 2)
+                this.publicCenter.close(ACTIVE_CLOSE);
+            if (this.publicCenter.readyState < 3)
+                await once(this.publicCenter, 'close');
         }
-        if (this.bitmex && this.bitmex.readyState !== 3) {
-            this.bitmex.close(ACTIVE_CLOSE);
-            await once(this.bitmex, 'close');
+        if (this.bitmex) {
+            if (this.bitmex.readyState < 2)
+                this.bitmex.close(ACTIVE_CLOSE);
+            if (this.bitmex.readyState < 3)
+                await once(this.bitmex, 'close');
         }
         await this.rawOrderbookHandler.stop();
     }
