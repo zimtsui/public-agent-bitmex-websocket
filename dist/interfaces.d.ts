@@ -19,6 +19,7 @@ interface RawTrade {
     side: string;
     size: number;
     price: number;
+    trdMatchID: string;
 }
 declare type RawTradesData = RawTrade[];
 export { Config, RawOrderbookData, RawOrderbookDataItem, RawTrade, RawTradesData, };

@@ -7,7 +7,7 @@ function formatRawTrades(raw) {
         price: Math.round(rawTrade.price * 100),
         action: rawTrade.side === 'Buy' ? interfaces_1.Action.BID : interfaces_1.Action.ASK,
         time: Date.parse(rawTrade.timestamp),
-        id: Date.parse(rawTrade.timestamp),
+        id: rawTrade.trdMatchID,
     }));
 }
 exports.formatRawTrades = formatRawTrades;

@@ -30,6 +30,7 @@
         "axios": "^0.19.0",
         "fs-extra": "^8.1.0",
         "interfaces": "git+https://github.com/zimtsui/interfaces.git",
+        "pandora-kita": "git+https://github.com/zimtsui/pandora-kita.git",
         "ws": "^7.1.2"
     }
 }

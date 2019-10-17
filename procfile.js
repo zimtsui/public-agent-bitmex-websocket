@@ -1,6 +1,7 @@
 'use strict';
 const { autoExitDecorator } = require('autonomous');
 const { PublicAgentBitmexWebsocket } = require('./');
+const { PandoraKita } = require('pandora-kita');
 
 module.exports = (pandora) => {
 
@@ -10,6 +11,10 @@ module.exports = (pandora) => {
         .env({
             NODE_ENV: pandora.dev ? 'development' : 'production',
         });
+
+    pandora
+        .service('kita', PandoraKita)
+        .process('weak-all');
 
     pandora
         .service(

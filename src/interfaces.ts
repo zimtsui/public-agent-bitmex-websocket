@@ -23,6 +23,7 @@ interface RawTrade {
     side: string;
     size: number;
     price: number;
+    trdMatchID: string;
 }
 
 type RawTradesData = RawTrade[];

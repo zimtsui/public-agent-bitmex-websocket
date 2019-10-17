@@ -11,7 +11,7 @@ function formatRawTrades(raw: RawTradesData): Trade[] {
         price: Math.round(rawTrade.price * 100),
         action: rawTrade.side === 'Buy' ? Action.BID : Action.ASK,
         time: Date.parse(rawTrade.timestamp),
-        id: Date.parse(rawTrade.timestamp), // TODO
+        id: rawTrade.trdMatchID,
     }));
 }
 

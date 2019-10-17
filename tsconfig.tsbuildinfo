@@ -134,15 +134,15 @@
         "signature": "63b66918290d794f73832a6d0325be5026236674fe8c0cb0b68d162000d7bbe8"
       },
       "./node_modules/interfaces/dist/index.d.ts": {
-        "version": "ed94b23c825623917f4cbc86882aa74fca6d712ff2ac4b4fce59f850db768312",
-        "signature": "ed94b23c825623917f4cbc86882aa74fca6d712ff2ac4b4fce59f850db768312"
+        "version": "59f79b339363049d7e42c13d83d890e1e7a89e7ab7c0f5635ecec724d7321f2e",
+        "signature": "59f79b339363049d7e42c13d83d890e1e7a89e7ab7c0f5635ecec724d7321f2e"
       },
       "./src/interfaces.ts": {
-        "version": "1a0ce112e05580641646fca760eacbcad5511932dc015ca61a61e814835df505",
-        "signature": "72225a135c536a1d67f35d86e4bb0333f6fa844adc751e19b5f5100587d3bf3d"
+        "version": "67f474027d19b3b8774e9643c2ab6ff2540f953bc73259a161cb51b8ceb1dd3f",
+        "signature": "6ca42f4fb9b384971839e994ce5f2da8283a714e77e42a771f3588768b5cc942"
       },
       "./src/format-raw-trades.ts": {
-        "version": "f3b50fb57df0529c7fab06fb5f1a6fa5deb239b6d7f23a9a2ce62eeb497cfec0",
+        "version": "467578d3d858f108bd886835d0ef47a9923424a2321d2766d6f3a099c16d3e63",
         "signature": "83cc4dc983d8c06e52857be454bdd77dae7672d7fbc4e9ad1c62963bc54718ff"
       },
       "./node_modules/@types/node/globals.d.ts": {
@@ -350,12 +350,12 @@
         "signature": "608f2736fe1cc700255c8116afc63d28fdc483254392ee3fde7bdafb26b12f71"
       },
       "./src/index.ts": {
-        "version": "5d55f88f8987d17f7fe67b22bcb94528f7fac1871103fd17a6e369e98f68c475",
+        "version": "128a611e30062da2ef7fd1a558109ab30c1301d89c8d8d3b6e03433b8527b3a8",
         "signature": "7795393995a774d731127b76814080bc3154b309adcae8a4c6ae7e9b56ffe54b"
       },
       "./node_modules/@types/bluebird/index.d.ts": {
-        "version": "3c10804e3bd90aa404eefbc300c362b0ebbd23b34eb03ae592717ac111889f34",
-        "signature": "3c10804e3bd90aa404eefbc300c362b0ebbd23b34eb03ae592717ac111889f34"
+        "version": "f41a3395fece5b112c18600fece3260cac50b945abd3fe8ccd3511ff32eef3e1",
+        "signature": "f41a3395fece5b112c18600fece3260cac50b945abd3fe8ccd3511ff32eef3e1"
       }
     },
     "options": {
@@ -1341,9 +1341,6 @@
       "./node_modules/typescript/lib/lib.es2019.symbol.d.ts",
       "./node_modules/typescript/lib/lib.esnext.intl.d.ts",
       "./node_modules/typescript/lib/lib.esnext.bigint.d.ts",
-      "./node_modules/interfaces/dist/index.d.ts",
-      "./src/interfaces.ts",
-      "./src/format-raw-trades.ts",
       "./node_modules/@types/node/globals.d.ts",
       "./node_modules/@types/node/assert.d.ts",
       "./node_modules/@types/node/async_hooks.d.ts",
@@ -1394,9 +1391,12 @@
       "./node_modules/autonomous/dist/index.d.ts",
       "./node_modules/@types/fs-extra/index.d.ts",
       "./node_modules/axios/index.d.ts",
+      "./node_modules/interfaces/dist/index.d.ts",
+      "./src/interfaces.ts",
       "./src/index.ts",
-      "./node_modules/@types/bluebird/index.d.ts",
-      "./src/raw-orderbook-handler.ts"
+      "./src/raw-orderbook-handler.ts",
+      "./src/format-raw-trades.ts",
+      "./node_modules/@types/bluebird/index.d.ts"
     ]
   },
   "version": "3.6.4"

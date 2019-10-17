@@ -50,8 +50,10 @@ class PublicAgentBitmexWebsocket extends autonomous_1.default {
             console.error(err);
         });
         this.publicCenter.on('close', code => {
-            if (code !== ACTIVE_CLOSE)
+            if (code !== ACTIVE_CLOSE) {
                 console.error(new Error('public center closed'));
+                this.stop();
+            }
         });
         await events_1.once(this.publicCenter, 'open');
     }
