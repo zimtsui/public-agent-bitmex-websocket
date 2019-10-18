@@ -31,7 +31,6 @@ class RawOrderbookHandler extends autonomous_1.default {
         const res = await axios_1.default.get(this.config.INSTRUMENT_LIST_URL);
         const list = res.data;
         this.xbtusdIndex = list.findIndex(instrument => instrument.symbol === 'XBTUSD');
-        console.log(this.xbtusdIndex);
         assert_1.default(this.xbtusdIndex !== -1);
     }
     async _stop() {

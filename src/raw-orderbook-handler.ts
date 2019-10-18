@@ -31,7 +31,6 @@ class RawOrderbookHandler extends Autonomous {
         const list = <any[]>res.data;
         this.xbtusdIndex = list.findIndex(instrument =>
             instrument.symbol === 'XBTUSD');
-        console.log(this.xbtusdIndex);
         assert(this.xbtusdIndex !== -1);
     }
 

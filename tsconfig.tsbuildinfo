@@ -346,7 +346,7 @@
         "signature": "9b3812f5ae5c9c8c9daf7107e1041f4ad9d19aebd12b738a81f22a1ac1f5e371"
       },
       "./src/raw-orderbook-handler.ts": {
-        "version": "4fae06f4ac9349036eac6378a1226f4abab08c55679802c264ff62f77c1c186d",
+        "version": "197dbea5d7cd951537eb663e3c9399a607c61ce2ba79cc3f9c7c9ede9af5e515",
         "signature": "608f2736fe1cc700255c8116afc63d28fdc483254392ee3fde7bdafb26b12f71"
       },
       "./src/index.ts": {
@@ -1394,9 +1394,9 @@
       "./node_modules/autonomous/dist/index.d.ts",
       "./node_modules/@types/fs-extra/index.d.ts",
       "./node_modules/axios/index.d.ts",
-      "./src/raw-orderbook-handler.ts",
+      "./src/index.ts",
       "./node_modules/@types/bluebird/index.d.ts",
-      "./src/index.ts"
+      "./src/raw-orderbook-handler.ts"
     ]
   },
   "version": "3.6.4"
