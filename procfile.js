@@ -20,7 +20,8 @@ module.exports = (pandora) => {
         .service(
             'public-agent-bitmex-websocket',
             autoExitDecorator(3000)(PublicAgentBitmexWebsocket),
-        ).process('process1');
+        ).dependency('kita')
+        .process('process1');
 
     /**
      * you can also use cluster mode to start application
