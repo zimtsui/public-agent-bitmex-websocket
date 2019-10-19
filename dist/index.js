@@ -18,7 +18,7 @@ const events_1 = require("events");
 const format_raw_trades_1 = __importDefault(require("./format-raw-trades"));
 const raw_orderbook_handler_1 = __importDefault(require("./raw-orderbook-handler"));
 const config = fs_extra_1.readJsonSync(path_1.join(__dirname, '../cfg/config.json'));
-const ACTIVE_CLOSE = 4000;
+const ACTIVE_CLOSE = 'public-agent-bitmex-websocket';
 class PublicAgentBitmexWebsocket extends autonomous_1.default {
     constructor() {
         super(...arguments);
@@ -36,13 +36,13 @@ class PublicAgentBitmexWebsocket extends autonomous_1.default {
     async _stop() {
         if (this.publicCenter) {
             if (this.publicCenter.readyState < 2)
-                this.publicCenter.close(ACTIVE_CLOSE);
+                this.publicCenter.close(1000, ACTIVE_CLOSE);
             if (this.publicCenter.readyState < 3)
                 await events_1.once(this.publicCenter, 'close');
         }
         if (this.bitmex) {
             if (this.bitmex.readyState < 2)
-                this.bitmex.close(ACTIVE_CLOSE);
+                this.bitmex.close(1000, ACTIVE_CLOSE);
             if (this.bitmex.readyState < 3)
                 await events_1.once(this.bitmex, 'close');
         }
@@ -53,8 +53,8 @@ class PublicAgentBitmexWebsocket extends autonomous_1.default {
         this.publicCenter.on('error', err => {
             console.error(err);
         });
-        this.publicCenter.on('close', code => {
-            if (code !== ACTIVE_CLOSE) {
+        this.publicCenter.on('close', (code, reason) => {
+            if (reason !== ACTIVE_CLOSE) {
                 console.error(new Error(`public center closed: ${code}`));
                 this.stop();
             }
@@ -69,8 +69,8 @@ class PublicAgentBitmexWebsocket extends autonomous_1.default {
         this.bitmex.on('error', err => {
             console.error(err);
         });
-        this.bitmex.on('close', code => {
-            if (code !== ACTIVE_CLOSE)
+        this.bitmex.on('close', (code, reason) => {
+            if (reason !== ACTIVE_CLOSE)
                 console.error(new Error(`bitmex closed: ${code}`));
             this.stop();
         });

@@ -15,7 +15,7 @@ import {
 
 const config: Config = readJsonSync(join(__dirname, '../cfg/config.json'));
 
-const ACTIVE_CLOSE = 4000;
+const ACTIVE_CLOSE = 'public-agent-bitmex-websocket';
 
 class PublicAgentBitmexWebsocket extends Autonomous {
     private bitmex!: WebSocket;
@@ -36,13 +36,13 @@ class PublicAgentBitmexWebsocket extends Autonomous {
     protected async _stop(): Promise<void> {
         if (this.publicCenter) {
             if (this.publicCenter.readyState < 2)
-                this.publicCenter.close(ACTIVE_CLOSE);
+                this.publicCenter.close(1000, ACTIVE_CLOSE);
             if (this.publicCenter.readyState < 3)
                 await once(this.publicCenter, 'close');
         }
         if (this.bitmex) {
             if (this.bitmex.readyState < 2)
-                this.bitmex.close(ACTIVE_CLOSE);
+                this.bitmex.close(1000, ACTIVE_CLOSE);
             if (this.bitmex.readyState < 3)
                 await once(this.bitmex, 'close');
         }
@@ -56,8 +56,8 @@ class PublicAgentBitmexWebsocket extends Autonomous {
         this.publicCenter.on('error', err => {
             console.error(err);
         });
-        this.publicCenter.on('close', code => {
-            if (code !== ACTIVE_CLOSE) {
+        this.publicCenter.on('close', (code, reason) => {
+            if (reason !== ACTIVE_CLOSE) {
                 console.error(new Error(`public center closed: ${code}`));
                 this.stop();
             }
@@ -75,8 +75,8 @@ class PublicAgentBitmexWebsocket extends Autonomous {
         this.bitmex.on('error', err => {
             console.error(err);
         });
-        this.bitmex.on('close', code => {
-            if (code !== ACTIVE_CLOSE)
+        this.bitmex.on('close', (code, reason) => {
+            if (reason !== ACTIVE_CLOSE)
                 console.error(new Error(`bitmex closed: ${code}`));
             this.stop();
         });
