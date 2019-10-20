@@ -1,6 +1,6 @@
 import WebSocket from 'ws';
 import { boundMethod } from 'autobind-decorator';
-import Autonomous from 'autonomous';
+import { Autonomous } from 'autonomous';
 import { readJsonSync } from 'fs-extra';
 import { join } from 'path';
 import { once } from 'events';

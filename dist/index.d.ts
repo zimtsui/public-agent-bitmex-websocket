@@ -1,4 +1,4 @@
-import Autonomous from 'autonomous';
+import { Autonomous } from 'autonomous';
 declare class PublicAgentBitmexWebsocket extends Autonomous {
     private bitmex;
     private publicCenter;

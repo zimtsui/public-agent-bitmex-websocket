@@ -1,4 +1,4 @@
-import Autonomous from 'autonomous';
+import { Autonomous } from 'autonomous';
 import { Config, RawOrderbookData, Orderbook } from './interfaces';
 declare class RawOrderbookHandler extends Autonomous {
     private config;

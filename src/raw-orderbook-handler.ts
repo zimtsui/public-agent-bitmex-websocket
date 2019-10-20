@@ -1,5 +1,5 @@
 import axios from 'axios';
-import Autonomous from 'autonomous';
+import { Autonomous } from 'autonomous';
 import { boundMethod } from 'autobind-decorator';
 import assert from 'assert';
 import {

@@ -10,7 +10,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const axios_1 = __importDefault(require("axios"));
-const autonomous_1 = __importDefault(require("autonomous"));
+const autonomous_1 = require("autonomous");
 const autobind_decorator_1 = require("autobind-decorator");
 const assert_1 = __importDefault(require("assert"));
 const interfaces_1 = require("./interfaces");
@@ -21,7 +21,7 @@ var RawDataAction;
     RawDataAction["DELETE"] = "delete";
     RawDataAction["INSERT"] = "insert";
 })(RawDataAction || (RawDataAction = {}));
-class RawOrderbookHandler extends autonomous_1.default {
+class RawOrderbookHandler extends autonomous_1.Autonomous {
     constructor(config) {
         super();
         this.config = config;

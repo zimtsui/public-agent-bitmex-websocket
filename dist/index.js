@@ -11,7 +11,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const ws_1 = __importDefault(require("ws"));
 const autobind_decorator_1 = require("autobind-decorator");
-const autonomous_1 = __importDefault(require("autonomous"));
+const autonomous_1 = require("autonomous");
 const fs_extra_1 = require("fs-extra");
 const path_1 = require("path");
 const events_1 = require("events");
@@ -19,7 +19,7 @@ const format_raw_trades_1 = __importDefault(require("./format-raw-trades"));
 const raw_orderbook_handler_1 = __importDefault(require("./raw-orderbook-handler"));
 const config = fs_extra_1.readJsonSync(path_1.join(__dirname, '../cfg/config.json'));
 const ACTIVE_CLOSE = 'public-agent-bitmex-websocket';
-class PublicAgentBitmexWebsocket extends autonomous_1.default {
+class PublicAgentBitmexWebsocket extends autonomous_1.Autonomous {
     constructor() {
         super(...arguments);
         this.rawOrderbookHandler = new raw_orderbook_handler_1.default(config);
