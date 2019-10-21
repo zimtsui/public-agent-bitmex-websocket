@@ -55,7 +55,7 @@ class PublicAgentBitmexWebsocket extends autonomous_1.Autonomous {
         });
         this.publicCenter.on('close', (code, reason) => {
             if (reason !== ACTIVE_CLOSE) {
-                console.error(new Error(`public center closed: ${code}`));
+                console.error(`public center closed: ${code}`);
                 this.stop();
             }
         });
@@ -71,7 +71,7 @@ class PublicAgentBitmexWebsocket extends autonomous_1.Autonomous {
         });
         this.bitmex.on('close', (code, reason) => {
             if (reason !== ACTIVE_CLOSE)
-                console.error(new Error(`bitmex closed: ${code}`));
+                console.error(`bitmex closed: ${code}`);
             this.stop();
         });
         await events_1.once(this.bitmex, 'open');
