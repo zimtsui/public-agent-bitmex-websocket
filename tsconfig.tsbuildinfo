@@ -134,8 +134,8 @@
         "signature": "63b66918290d794f73832a6d0325be5026236674fe8c0cb0b68d162000d7bbe8"
       },
       "./node_modules/interfaces/dist/index.d.ts": {
-        "version": "59f79b339363049d7e42c13d83d890e1e7a89e7ab7c0f5635ecec724d7321f2e",
-        "signature": "59f79b339363049d7e42c13d83d890e1e7a89e7ab7c0f5635ecec724d7321f2e"
+        "version": "ed237b68f440cd10c6fcdfbdde8268eccef5820fb9d8cb19a48a0b2c06d55e48",
+        "signature": "ed237b68f440cd10c6fcdfbdde8268eccef5820fb9d8cb19a48a0b2c06d55e48"
       },
       "./src/interfaces.ts": {
         "version": "67f474027d19b3b8774e9643c2ab6ff2540f953bc73259a161cb51b8ceb1dd3f",
@@ -358,11 +358,11 @@
         "signature": "9b3812f5ae5c9c8c9daf7107e1041f4ad9d19aebd12b738a81f22a1ac1f5e371"
       },
       "./src/raw-orderbook-handler.ts": {
-        "version": "1616f18bdf48383f6299303d30d8ae366ba0218deda497717bcc1f14eca8bf0c",
+        "version": "4e8e3f9b8a544b2d09c0996cc1292e8850fa7d25b97b0cfaeb036582803c6c79",
         "signature": "e3702d796a70dcf2de3c431887ab5e120a4648a1a2a1ad316e08c349dcbafdf4"
       },
       "./src/index.ts": {
-        "version": "f4796ac0695220ef70369b8cd7bc95e1beb7952668f39fe90dc7540b1b566bb4",
+        "version": "21c1701c98d49618997b3b25b58005aa16d706446f3c0328a8dd0984a41d2f3f",
         "signature": "f95884dcda8ef7c5705519724eba08604b484270b3ed514e84f04fe5a523470c"
       },
       "./node_modules/pandora-kita/dist/index.d.ts": {
@@ -1762,9 +1762,6 @@
       "./node_modules/typescript/lib/lib.es2019.symbol.d.ts",
       "./node_modules/typescript/lib/lib.esnext.intl.d.ts",
       "./node_modules/typescript/lib/lib.esnext.bigint.d.ts",
-      "./node_modules/interfaces/dist/index.d.ts",
-      "./src/interfaces.ts",
-      "./src/format-raw-trades.ts",
       "./node_modules/@types/node/globals.d.ts",
       "./node_modules/@types/node/assert.d.ts",
       "./node_modules/@types/node/async_hooks.d.ts",
@@ -1818,11 +1815,14 @@
       "./node_modules/autonomous/dist/index.d.ts",
       "./node_modules/@types/fs-extra/index.d.ts",
       "./node_modules/axios/index.d.ts",
-      "./src/raw-orderbook-handler.ts",
       "./node_modules/pandora-kita/dist/index.d.ts",
-      "./src/main.ts",
       "./node_modules/@types/chai/index.d.ts",
-      "./src/index.ts"
+      "./node_modules/interfaces/dist/index.d.ts",
+      "./src/interfaces.ts",
+      "./src/raw-orderbook-handler.ts",
+      "./src/index.ts",
+      "./src/format-raw-trades.ts",
+      "./src/main.ts"
     ]
   },
   "version": "3.6.4"

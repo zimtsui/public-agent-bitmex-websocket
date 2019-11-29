@@ -60,6 +60,7 @@ class RawOrderbookHandler extends autonomous_1.Autonomous {
             asks: allOrders
                 .filter(order => order.action === interfaces_1.Action.ASK)
                 .sort((order1, order2) => order1.price - order2.price),
+            time: Date.now(),
         };
     }
     formatRawOrder(rawOrder) {

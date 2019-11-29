@@ -10,7 +10,7 @@ import {
     Config,
     RawOrderbookData,
     RawTradesData,
-    PublicDataFromAgentToCenter as PDFATC,
+    DataFromPublicAgentToCenter as DFPATC,
 } from './interfaces';
 
 const config: Config = readJsonSync(join(__dirname, '../cfg/config.json'));
@@ -126,7 +126,7 @@ class PublicAgentBitmexWebsocket extends Autonomous {
     ): void {
         const orderbook = this.rawOrderbookHandler
             .handle(raw, rawDataAction);
-        const data: PDFATC = {
+        const data: DFPATC = {
             orderbook,
         };
         this.publicCenter.send(JSON.stringify(data));
@@ -134,7 +134,7 @@ class PublicAgentBitmexWebsocket extends Autonomous {
 
     private onRawTradesData(raw: RawTradesData): void {
         const trades = formatRawTrades(raw);
-        const data: PDFATC = {
+        const data: DFPATC = {
             trades,
         };
         this.publicCenter.send(JSON.stringify(data));
